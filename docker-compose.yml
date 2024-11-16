@@ -10,12 +10,12 @@ services:
       - ./mysql-data:/var/lib/mysql
     networks:
       - bankapp
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
-      start_period: 30s
+    #healthcheck:
+     # test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      #interval: 10s
+      #timeout: 5s
+      #retries: 3
+      #start_period: 30s
 
   mainapp:
     image: vinay969/bankingapp:latest
