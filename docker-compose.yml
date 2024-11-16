@@ -10,12 +10,12 @@ services:
       - ./mysql-data:/var/lib/mysql
     networks:
       - bankapp
-    #healthcheck:
-     # test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      #interval: 10s
-      #timeout: 5s
-      #retries: 3
-      #start_period: 30s
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
 
   mainapp:
     image: vinay969/bankingapp:latest
@@ -32,12 +32,12 @@ services:
     networks:
       - bankapp
     restart: always
-    healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-      start_period: 40s
+    #healthcheck:
+     # test: ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1"]
+     # interval: 30s
+     # timeout: 10s
+     # retries: 5
+     # start_period: 40s
 
 networks:
   bankapp:
