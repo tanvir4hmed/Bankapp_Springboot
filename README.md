@@ -23,7 +23,7 @@
 - **<p id="Docker">Deployment using Docker</p>**
   - Clone the repository
   ```bash
-  git clone -b DevOps https://github.com/DevMadhup/Springboot-BankApp.git
+  git clone -b DevOps https://github.com/tanvir4hmed/Bankapp_Springboot.git
   ```
   #
   - Install docker, docker compose and provide neccessary permission
